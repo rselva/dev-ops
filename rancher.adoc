@@ -1,1 +1,11 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 TIP: Rancher installation
+
+sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
