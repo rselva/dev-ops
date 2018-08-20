@@ -1,1 +1,1 @@
-#Rancher installation
+TIP: Rancher installation
