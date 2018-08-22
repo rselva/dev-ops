@@ -1,0 +1,2 @@
+#Installation
+Set-VMProcessor  -VMName "<Your Virtual Machine Name>" -ExposeVirtualizationExtenstions $true
