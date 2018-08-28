@@ -1,2 +1,3 @@
 # dev-ops
-![logo](https://github.com/rselva/dev-ops/blob/master/docker.png)
+ 
+https://gist.github.com/kekru/4e6d49b4290a4eebc7b597c07eaf61f2
