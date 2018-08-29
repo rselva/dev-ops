@@ -2,8 +2,7 @@
 
 Set-VMProcessor  -VMName "<Your Virtual Machine Name>" -ExposeVirtualizationExtenstions $true
 
+##Docker (access the host OS)
 docker run -it --cap-add SYS_ADMIN --cap-add SYS_PTRACE --pid=host debian nsenter -t 1  -m -u -n -i sh (--privilleged)
 
-xoxb-422467510048-423062337619-FlakBZNHG69N1hRaSFUftXU8
-
-xoxp-422467510048-422467510256-422962769700-2ad53e16528698159fb35c81c9202cb6
+https://github.com/docker/compose/releases
