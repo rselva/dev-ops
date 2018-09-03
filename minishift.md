@@ -15,7 +15,7 @@ https://docs.okd.io/latest/minishift/getting-started/index.html
 4. Start minishift cluster<br>
   PS C:\....> minishift start<br>
   PS C:\Users\selvarasu.ramasamy> minishift.exe console<br>
-    Opening the OpenShift Web console in the default browser...
-  PS C:\Users\selvarasu.ramasamy> minishift stop
-    Stopping the OpenShift cluster...
-    Cluster stopped.
+    Opening the OpenShift Web console in the default browser...<br>
+  PS C:\Users\selvarasu.ramasamy> minishift stop<br>
+    Stopping the OpenShift cluster...<br>
+    Cluster stopped.<br>
