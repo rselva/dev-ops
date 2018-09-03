@@ -9,13 +9,13 @@ https://docs.okd.io/latest/minishift/getting-started/index.html
 
 3. Configure virtual switch and vm-driver to use with minikube<br>
   PS C:\...> minishift config set hyperv-virtual-switch "ExtVSwitch"<br>
-
   PS C:\...> minishift config  set vm-driver hyperv<br>
-  No Minishift instance exists. New 'vm-driver' setting will be applied on next 'minishift start'<br>
+    No Minishift instance exists. New 'vm-driver' setting will be applied on next 'minishift start'<br>
+  
 4. Start minishift cluster<br>
   PS C:\....> minishift start<br>
   PS C:\Users\selvarasu.ramasamy> minishift.exe console<br>
-  Opening the OpenShift Web console in the default browser...
+    Opening the OpenShift Web console in the default browser...
   PS C:\Users\selvarasu.ramasamy> minishift stop
-  Stopping the OpenShift cluster...
-  Cluster stopped.
+    Stopping the OpenShift cluster...
+    Cluster stopped.
