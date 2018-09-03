@@ -1,13 +1,21 @@
 ## Minishift
 https://docs.okd.io/latest/minishift/getting-started/index.html
 
-Create Virtual Switch in HyperV manager
+1. Download minishift binary (minishift.exe) and place it in PATH <br>
+  PS C:\...> minishift<br>
+  Minishift is a command-line tool that provisions and manages single-node OpenShift clusters optimized for development workflows.<br>
 
-Extract files to a location and add to path
+2. Create an external virtual switch in Hyper-V manager<br>
 
-Configure
-PS C: minishift config set hyperv-virtual-switch "Minishift"
+3. Configure virtual switch and vm-driver to use with minikube<br>
+  PS C:\...> minishift config set hyperv-virtual-switch "ExtVSwitch"<br>
 
-Start
-PS C: minishift start
-
+  PS C:\...> minishift config  set vm-driver hyperv<br>
+  No Minishift instance exists. New 'vm-driver' setting will be applied on next 'minishift start'<br>
+4. Start minishift cluster<br>
+  PS C:\....> minishift start<br>
+  PS C:\Users\selvarasu.ramasamy> minishift.exe console<br>
+  Opening the OpenShift Web console in the default browser...
+  PS C:\Users\selvarasu.ramasamy> minishift stop
+  Stopping the OpenShift cluster...
+  Cluster stopped.
