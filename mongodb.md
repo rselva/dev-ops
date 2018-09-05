@@ -7,8 +7,13 @@ To create volumes
 
 > docker run --link mongoserver:mongo -p 8081:8081 mongo-express
 
+
+## Documentation
+ 
+https://docs.mongodb.com/manual/tutorial/getting-started/
+
 ## Docker-Compose
-====
+```
 version: '3.1'
 
 services:
@@ -28,4 +33,4 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
-====
+```
