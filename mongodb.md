@@ -5,7 +5,7 @@ $ docker run -v /data/db -v /data/configdb --name mongostorage busybox echo 'cre
 
 $ docker run -d -p 27017:27017 --volumes-from mongostorage --name mongoserver mongo
 
-$ docker run --link mongoserver:mongo -p 8081:8081 -d mongo-express mongoui
+$ docker run --link mongoserver:mongo -p 8081:8081 -d mongo-express 
 ```
 ### Connect to MongoDB from another container
 ```
