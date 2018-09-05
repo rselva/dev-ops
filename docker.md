@@ -34,6 +34,6 @@ https://download.docker.com/ -Docker <br>
 # Docker Misc
 ### Access Docker machine 
     $ docker run -it --cap-add SYS_ADMIN --cap-add SYS_PTRACE --pid=host debian nsenter -t 1  -m -u -n -i sh (--privilleged)
-
+    $ sudo usermod -aG docker c22581a 
 
 
