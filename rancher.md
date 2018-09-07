@@ -6,9 +6,12 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-TIP: Rancher installation
+:bulb: Rancher installation
+```
+$ docker  volume rm $(docker volume ls -q)
+$ rm -rf /var/lib/etcd /etc/kubernetes/ssl /etc/cni /opt/cni /var/lib/cni /var/run/calico /etc/kubernetes/.tmp/
+$ mount --bind /var/lib/docker/ /var/lib/docker
+$ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
+$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.0.8 --server https://10.10.181.210 --token 99md7vlnbglpt5s4p6gvrc2wmjjrfspxsc5k8h8lmxc9r2ln6fl85d --ca-checksum e68b3cb459705b2970ced8cdc4b6f69a8d9a94188165294744188f441a4563b8 --etcd --controlplane --worker
+```
 
-sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
-
-docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.0.7 --server https://localhost --token dmx6wc79zdxvxxhwm5x7dl5rjkjbsmhgx9hx5cs7mst45b8z57npm2 --ca-checksum fbb6fb274fef0cb59123e452edb63cd03095ba226f7c05c2acc805934ebf527f --etcd --controlplane --worker
-bc9a60ef2c0291caf50e8a6e2014236e9220c84a9355ddeda00ef577b1fb4a8d
