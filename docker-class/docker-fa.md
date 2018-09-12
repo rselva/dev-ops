@@ -116,22 +116,18 @@ $ docker container run time:beta
 $ docker container run --name time-instance time:beta
 ```
 #### e. Sharing (shipping an image)
-##### f. Create HUBID @ [https://hub.docker.com/](https://hub.docker.com/)
+##### Create HUBID @ [https://hub.docker.com/](https://hub.docker.com/)
 ```
 $ docker login
 $  cat ~/.docker/config.json
 ```
-```json
-{
-    "auths": {
-        "https://index.docker.io/v1/": {
-        }
-    }
-}
-```
+##### Tag image prefix and push 
 ```
 $ docker image tag time:beta ${HUB_USER}/time:beta (rselva/time:beta)
 $ docker image push rselva/time:beta 
+```
+##### Test it
+```
 $ docker image rm rselva/time:beta
 $ docker iamge ls
 $ docker container run --rm rselva/time:beta
