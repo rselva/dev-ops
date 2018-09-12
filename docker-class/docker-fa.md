@@ -82,7 +82,7 @@ Play @ http://localhost:8080
 ```
 
 ## Part-7. Dockerizing an applicatiion - Creating an image, Running a container, Sharing it
-### Java Application-> Save as Application.java
+#### a. Java Application-> Save as Application.java
 ```java
 import java.time.Instant;
 public class Application {
@@ -93,7 +93,7 @@ public class Application {
 	
 }
 ```
-### Dockerfile  -> Save as Dockerfile
+#### b. Dockerfile  -> Save as Dockerfile
 ```
 FROM openjdk:8-jdk-alpine3.8
 COPY . /usr/src/myapp
@@ -102,19 +102,19 @@ RUN javac Application.java
 CMD ["java", "Application"]
 ```
 
-### Creating image 
+#### c. Creating image 
 $ docker image build -t {tag} {build context}
 ```
 $ docker image build -t time:beta .
 $ docker image ls
 ```
-### Creating Container
+#### d. Creating Container
 ```
 $ docker container run time:beta
 $ docker container run --name time-instance time:beta
 ```
-### Sharing (shipping an image)
-#### Create HUBID @ [https://hub.docker.com/](https://hub.docker.com/)
+#### e. Sharing (shipping an image)
+##### f. Create HUBID @ [https://hub.docker.com/](https://hub.docker.com/)
 ```
 $ docker login
 $  cat ~/.docker/config.json
@@ -135,17 +135,17 @@ $ docker iamge ls
 $ docker container run --rm rselva/time:beta
 ```
 
-## Part-7. Docker in Windows
+## Part-8. Accessing Docker host from containers
 ```
 $ docker run -it --cap-add SYS_ADMIN --cap-add SYS_PTRACE --pid=host alpine nsenter -t 1  -m -u -n -i sh
 $ cat etc/os-release
 $ cat etc/issue
 $ exit
 ```
-## Part-8. Saving the container state
+## Part-9. Saving the container state (commit)
 ```
 1. $ docker images
-2.  $ docker image tag alpine:latest alpine:beta
+2. $ docker image tag alpine:latest alpine:beta
 3. $ docker container run --name myalpine -it alpine:beta sh
 4. $ docker container ps
 5. $ docker container ps -a
@@ -154,10 +154,11 @@ $ exit
 8. $ docker container commit myalpine alpine:beta2
 9. $ docker image history alpine:beta2
 ```
-## Part-9. Store App example 
+
+## Part-10. Store App example 
 **Store-App**<br>
 	+ product-service<br>
-	+ web-app <br> //Not covered today
+	+ web-app //Not covered today<br>
 	
 ### Step 1. Clone the repo 
 ```
