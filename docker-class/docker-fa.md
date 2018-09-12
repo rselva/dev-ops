@@ -35,31 +35,44 @@ docker [resource/object] [command] [options] [args]
 	/# cat /etc/os-release ; exit
 9 $ docker container start alpine1; 
 10. $ docker container exec alpine1 cat /etc/issue 
-11. $ docker container rm alpine1
+11. $ docker container rm --force alpine1
 ```
-## Part-3.  Detached mode & logs & exec commands 
+## Part-3. Detached mode  & exec commands 
 ```
-1. $ docker container run -it --name alpine1 --rm alpine
+1. $ docker container run -it --name alpine2 --rm alpine
 	/# ps aux; exit
 2. $ docker container run -d -it --name alpine2 alpine (detached)
 3. $ docker container exec alpine2 cat /etc/os-release
 4. $ docker container attach alpine2
 	/$ exit
 ``` 
-## Part-4. We are big chill (Example)
+## Part-4. Container logs ( STDOUT of container) 
+```
+TERMINAL 1
+1. docker container run -it --name alpine3 --rm alpine
+	/# ps aux
+TERMINAL 2
+2. docker container logs alpine3
+```
+## Part-5. We are big chill (Example)
+### Building on your own
 ```
 1. $ git clone https://github.com/spkane/wearebigchill.git --config core.autocrlf=input
 2. $ cd wearebigchill
 3. $ docker image build -t wearebigchill:beta .
 4. $ docker image ls
-5. $ docker container run --name wearebigchill -p 8080:80 wearebigchill:beta
+5. $ docker container run --rm --name wearebigchill -p 8080:80  wearebigchill:beta
 6. $ docker container rm --force wearebigchill
+7. $ docker container run --rm --name wearebigchill -p 8080:80 -e "THEME=2" wearebigchill:beta
 ```
-or
+### Using a shared image 
 ```
-1. $ docker container run --name wearebigchill -p 8080:80 rselva/wearebigchill:beta
+0. $ docker image tag wearebigchill:beta rselva/wearebigchill:beta ; docker image push rselva/wearebigchill:beta 
+1. $ docker container run --rm --name wearebigchill -p 8080:80 rselva/wearebigchill:beta
 ```
-## Part-5. Static web application with nginx
+Play @ http://localhost:8080
+
+## Part-6. Static web application with nginx
 ```
 1. $ mkdir html ; echo "<h2>Welcom to my blog!</h1>" > html\index.html
 2. $ docker run --name docker-nginx -p 8080:80 -d -v html:/usr/share/nginx/html nginx
@@ -68,7 +81,7 @@ or
 5. $ docker container rm --force docker-nginx
 ```
 
-## Part-6. Dockerizing an applicatiion - Creating an image, Running a container, Sharing it
+## Part-7. Dockerizing an applicatiion - Creating an image, Running a container, Sharing it
 ### Java Application-> Save as Application.java
 ```java
 import java.time.Instant;
