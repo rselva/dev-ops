@@ -108,16 +108,11 @@ $  cat ~/.docker/config.json
 ```
 ```json
 {
-        "auths": {
-                "https://index.docker.io/v1/": {}
-        },
-        "HttpHeaders": {
-                "User-Agent": "Docker-Client/18.06.1-ce (windows)"
-        },
-        "credsStore": "wincred",
-        "stackOrchestrator": "kubernetes"
+    "auths": {
+        "https://index.docker.io/v1/": {
+        }
+    }
 }
-
 ```
 ```
 $ docker image tag time:beta ${HUB_USER}/time:beta (rselva/time:beta)
