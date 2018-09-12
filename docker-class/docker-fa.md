@@ -3,13 +3,16 @@
 ### Docker CLI
 ```docker
 docker [resource/object] [command] [options] [args]
-
-## Display Docker version and info
+```
+### Display Docker version and info
+```docker
 1. $ docker --version
 2. $ docker version
 3. $ docker info
-
-## List Docker Objects
+```
+### Explore Docker Platform
+![](E:\dev-ops\docker-class\platform.PNG)
+```docker
 4. $ docker image ls (list images)
 5. $ docker container ls (or ps) (list containers)
 6. $ docker volume ls
