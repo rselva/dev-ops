@@ -101,8 +101,25 @@ $ docker container run time:beta
 $ docker container run --name time-instance time:beta
 ```
 ### Sharing (shipping an image)
+#### Create HUBID @ [https://hub.docker.com/](https://hub.docker.com/)
 ```
 $ docker login
+$  cat ~/.docker/config.json
+```
+```json
+{
+        "auths": {
+                "https://index.docker.io/v1/": {}
+        },
+        "HttpHeaders": {
+                "User-Agent": "Docker-Client/18.06.1-ce (windows)"
+        },
+        "credsStore": "wincred",
+        "stackOrchestrator": "kubernetes"
+}
+
+```
+```
 $ docker image tag time:beta ${HUB_USER}/time:beta (rselva/time:beta)
 $ docker image push rselva/time:beta 
 $ docker image rm rselva/time:beta
@@ -161,3 +178,5 @@ Building the image
 7. $ docker container rm --force product-service
 ```
 
+### Part 10. Slack Bot
+?
