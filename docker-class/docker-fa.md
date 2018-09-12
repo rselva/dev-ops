@@ -145,16 +145,21 @@ $ cat etc/issue
 $ exit
 ```
 ## Part-9. Saving the container state (commit)
+#### Create container and add some files
 ```
 1. $ docker images
 2. $ docker image tag alpine:latest alpine:beta
 3. $ docker container run --name myalpine -it alpine:beta sh
-4. $ docker container ps
-5. $ docker container ps -a
-6. $ docker container start myalpine
-7. $ docker container attach myalpine
-8. $ docker container commit myalpine alpine:beta2
-9. $ docker image history alpine:beta2
+	#/echo "Docker class" > class.txt
+```
+#### Commit container and tag image
+```
+4. $ docker container commit myalpine alpine:beta2
+```
+#### Check history
+```
+5. $ docker image history alpine:beta2
+6. $ docker image history alpine:beta
 ```
 
 ## Part-10. Store App example 
