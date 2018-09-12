@@ -34,6 +34,7 @@ docker [resource/object] [command] [options] [args]
 8. $ docker container attach alpine1
 	/# cat /etc/os-release ; exit
 9 $ docker container start alpine1; 
+## Running commands in a live container
 10. $ docker container exec alpine1 cat /etc/issue 
 11. $ docker container rm --force alpine1
 ```
@@ -52,7 +53,8 @@ TERMINAL 1
 1. docker container run -it --name alpine3 --rm alpine
 	/# ps aux
 TERMINAL 2
-2. docker container logs alpine3
+2. docker container logs -f alpine3
+3. docker container logs -f alpine3
 ```
 ## Part-5. We are big chill (Example)
 ### Building on your own
@@ -77,7 +79,7 @@ Play @ http://localhost:8080
 1. $ mkdir html ; echo "<h2>Welcom to my blog!</h1>" > html\index.html
 2. $ docker run --name docker-nginx -p 8080:80 -d -v html:/usr/share/nginx/html nginx
 3. $ http://localhost:8080
-4. $ docker container exec -it docker-nginx sh
+4. $ docker container exec -it docker-nginx sh 
 5. $ docker container rm --force docker-nginx
 ```
 
