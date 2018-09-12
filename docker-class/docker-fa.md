@@ -18,13 +18,15 @@ docker [resource/object] [command] [options] [args]
 7. $ docker network ls 
 ```
 ## Part-2. Create and Run first container
-```
-# Pull an image (Minimal linux)
+
+### Pull image (Minimal linux)
+```docker
 1. $ docker image pull alpine
 2. $ docker image ls
 3. $ docker image history alpine
-
-# Create, start, stop, attach, remove container
+```
+### Create, start, stop, attach, remove container
+```docker
 4. $ docker container create -it alpine 
 5. $ docker container ps -a
 6. $ docker container create -it --name alpine1 alpine
@@ -34,11 +36,8 @@ docker [resource/object] [command] [options] [args]
 9 $ docker container start alpine1; 
 10. $ docker container exec alpine1 cat /etc/issue 
 11. $ docker container rm alpine1
-
- 
-
 ```
-## Part-3. Interactive containers
+## Part-3.  Detached mode & logs & exec commands 
 ```
 1. $ docker container run -it --name alpine1 --rm alpine
 	/# ps aux; exit
