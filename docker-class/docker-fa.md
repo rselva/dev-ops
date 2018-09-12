@@ -11,8 +11,9 @@ docker [resource/object] [command] [options] [args]
 3. $ docker info
 ```
 ### Explore Docker Platform
-<img src="https://github.com/rselva/dev-ops/blob/master/docker-class/platform.PNG" data-canonical-src="https://github.com/rselva/dev-ops/blob/master/docker-class/platform.PNG" width="200" height="400" />
-```docker
+<img src="https://github.com/rselva/dev-ops/blob/master/docker-class/platform.PNG"  width="500" height="300" />
+<br>
+```
 4. $ docker image ls (list images)
 5. $ docker container ls (or ps) (list containers)
 6. $ docker volume ls
