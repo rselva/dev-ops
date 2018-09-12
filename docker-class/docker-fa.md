@@ -1,8 +1,7 @@
 # This page - https://bit.ly/2MezS0z
 ## Part-1. Getting started - Docker environment
-```
-## Docker CLI commands
-docker [command]
+### Docker CLI
+```docker
 docker [resource/object] [command] [options] [args]
 
 ## Display Docker version and info
@@ -16,7 +15,7 @@ docker [resource/object] [command] [options] [args]
 6. $ docker volume ls
 7. $ docker network ls 
 ```
-## Part-2. Create and Run containers from public images 
+## Part-2. Create and Run first container
 ```
 # Pull an image (Minimal linux)
 1. $ docker image pull alpine
@@ -33,6 +32,9 @@ docker [resource/object] [command] [options] [args]
 9 $ docker container start alpine1; 
 10. $ docker container exec alpine1 cat /etc/issue 
 11. $ docker container rm alpine1
+
+```
+```
 
 ```
 ## Part-3. Interactive containers
@@ -108,7 +110,7 @@ $ docker iamge ls
 $ docker container run --rm rselva/time:beta
 ```
 
-## Part-7. Privileged containers (Container security ?)
+## Part-7. Docker in Windows
 ```
 $ docker run -it --cap-add SYS_ADMIN --cap-add SYS_PTRACE --pid=host alpine nsenter -t 1  -m -u -n -i sh
 $ cat etc/os-release
