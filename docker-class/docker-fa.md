@@ -163,32 +163,37 @@ $ exit
 	+ product-service<br>
 	+ web-app //Not covered today<br>
 	
-### Step 1. Clone the repo 
+### Step 1. Clone the repo or download from https://github.com/rselva/store-app.git
 ```
 1. $ git clone https://github.com/rselva/store-app.git
 2. $ cd store-app
 ```
 ### Step 2. Product service
-#### Dockerize and run
+#### Build with Maven
 ```
 1. $ cd product-service
-####### If maven available #########
-Building the image 
 2. $ mvn clean package   --> .\target\product-service-0.1.0.jar
+```
+```
 3. $ cat Dockerfile
 	FROM openjdk:8-jdk-alpine
 	VOLUME /tmp
 	ARG JAR_FILE
 	COPY ${JAR_FILE} app.jar
 	ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+```
+```
 4. $ docker image build --build-arg JAR_FILE=target/product-service-0.1.0.jar -t rselva/product-service:beta . 
 5. $ docker image push rselva/product-service:beta
-#####################################
+```
+#### Run product service as standalone container
+```
 6. $ docker container run --rm -d -p 8080:8080 --name product-service rselva/product-service:beta
 	http://localhost:8080
 ## Clean up
 7. $ docker container rm --force product-service
 ```
+
 
 ### Part 10. Slack Bot
 ?
