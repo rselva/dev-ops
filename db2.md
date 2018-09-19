@@ -6,7 +6,10 @@ docker stop db2
 docker start db2
 docker exec -i -t db2 /bin/bash
 su - db2inst1
-db2 create db hibern8
+db2 create db ${DBNAME}
+db2 list database directory 
+db2 connect to ${DBNAME}
+db2 create schema ${SCHEMA_NAME} db2instc1
 ```
 #### With Mount 
 ```
